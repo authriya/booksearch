@@ -7,7 +7,7 @@ class ToolBar extends React.Component {
 
     handleSearchInput = (input) => {
         this.setState({
-            searchInput: input.target.value
+            searchInput: input
         })
     }
     render() {
@@ -17,7 +17,7 @@ class ToolBar extends React.Component {
                 <form className="searchform"
                 onSubmit = {submitEvent => this.props.handleSubmit(submitEvent, this.state.searchInput)}>
                     <input type="text" placeholder="search for something"
-                    onChange= {this.handleSearchInput}/>
+                    onChange= {e=> this.handleSearchInput(e.target.value)}/>
                     <button type="submit">search</button>
                 </form>
                 <form className="filters">
