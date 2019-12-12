@@ -16,22 +16,25 @@ class App extends React.Component {
   setPrintType = (value) => {
       this.setState({
         printType: value
+      }, () => {
+        this.fetchList()
       })
-      this.fetchList()
   }
   setPrice = (value) => {
       this.setState({
         price: value
+      }, () => {
+        this.fetchList()
       })
-      this.fetchList()
   }
 
   setQuery = (e, value) => {
     e.preventDefault();
     this.setState({
       searchTerm: value
+    }, () => {
+      this.fetchList()
     })
-    this.fetchList()
   }
 
   fetchList() {
